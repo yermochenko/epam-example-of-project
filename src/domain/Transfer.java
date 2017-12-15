@@ -2,7 +2,7 @@ package domain;
 
 import java.util.Date;
 
-public class Tranfer extends Entity {
+public class Transfer extends Entity {
     private Account source;
     private Account destination;
     private Long amount;
