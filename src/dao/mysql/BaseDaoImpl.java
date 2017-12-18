@@ -3,7 +3,7 @@ package dao.mysql;
 import java.sql.Connection;
 
 public class BaseDaoImpl {
-    Connection connection;
+    private Connection connection;
 
     public Connection getConnection() {
         return connection;
