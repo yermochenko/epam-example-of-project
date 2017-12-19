@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+  version="3.1"
+  metadata-complete="true">
+
+    <display-name>Банк «Рога и копыта»</display-name>
+
+    <servlet>
+      <servlet-name>UserListController</servlet-name>
+      <servlet-class>controller.UserListController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserListController</servlet-name>
+        <url-pattern>/user/list.html</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>

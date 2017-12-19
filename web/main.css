@@ -1,0 +1,54 @@
+table {
+    border-collapse: collapse;
+}
+
+td.empty {
+    padding: 0;
+}
+
+th, td.content {
+    border: 1px solid black;
+}
+
+th {
+    padding: 5px 10px;
+}
+
+td.content {
+    padding: 5px 30px 5px 10px;
+}
+
+a.edit {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url('edit.png');
+}
+
+a.add-button {
+    display: inline-block;
+    min-width: 32px;
+    height: 32px;
+    line-height: 32px;
+    margin: 5px 5px 0 0;
+    padding: 2px 5px 2px 36px;
+    background: #0C4 url('add.png') 2px 2px no-repeat;
+    color: #333;
+    text-decoration: none;
+}
+
+form {
+    width: 300px;
+    background: yellow;
+    padding: 0 20px 20px 20px;
+}
+
+form label, form input, form select {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+form label {
+    margin-top: 20px;
+}
