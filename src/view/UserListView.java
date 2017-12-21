@@ -26,7 +26,7 @@ public class UserListView extends HttpServlet {
         writer.println("<link href=\"../main.css\" rel=\"stylesheet\">");
         writer.println("</head>");
         writer.println("<body>");
-        writer.println("<h1>Банк «Рога и копыта» sdghdghkfg</h1>");
+        writer.println("<h1>Банк «Рога и копыта»</h1>");
         writer.println("<h2>Список пользователей</h2>");
         writer.println("<table>");
         writer.println("<tr>");
