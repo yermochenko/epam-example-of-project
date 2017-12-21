@@ -18,6 +18,16 @@
         <url-pattern>/user/list.html</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+      <servlet-name>UserListView</servlet-name>
+      <servlet-class>view.UserListView</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserListView</servlet-name>
+        <url-pattern>/WEB-INF/user/list.html</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
