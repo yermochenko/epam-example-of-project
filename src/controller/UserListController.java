@@ -37,7 +37,7 @@ public class UserListController extends HttpServlet {
             service.setUserDao(dao);
             List<User> users = service.findAll();
             req.setAttribute("users", users);
-            req.getRequestDispatcher("/WEB-INF/user/list.html").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/jsp/user/list.jsp").forward(req, resp);
         } catch(SQLException | ServiceException e) {
             throw new ServletException(e);
         } finally {
