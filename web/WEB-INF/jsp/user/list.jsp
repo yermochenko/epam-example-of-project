@@ -22,7 +22,7 @@
             <c:forEach var="user" items="${users}">
                 <tr>
                     <td class="content">${user.login}</td>
-                    <td class="content">${user.role}</td>
+                    <td class="content">${user.role.name}</td>
                     <td class="empty">
                         <c:url var="urlUserEdit" value="/user/edit.html">
                             <c:param name="id" value="${user.id}"/>

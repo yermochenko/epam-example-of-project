@@ -40,6 +40,32 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     }
 
     @Override
+    public User readByLogin(String login) throws DaoException {
+        String sql = "SELECT `id`, `password`, `role` FROM `user` WHERE `login` = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = getConnection().prepareStatement(sql);
+            statement.setString(1, login);
+            resultSet = statement.executeQuery();
+            User user = null;
+            if(resultSet.next()) {
+                user = new User();
+                user.setId(resultSet.getLong("id"));
+                user.setLogin(login);
+                user.setPassword(resultSet.getString("password"));
+                user.setRole(Role.values()[resultSet.getInt("role")]);
+            }
+            return user;
+        } catch(SQLException e) {
+            throw new DaoException(e);
+        } finally {
+            try{ statement.close(); } catch(Exception e) {}
+            try{ resultSet.close(); } catch(Exception e) {}
+        }
+    }
+
+    @Override
     public List<User> readAll() throws DaoException {
         String sql = "SELECT `id`, `login`, `password`, `role` FROM `user`";
         Statement statement = null;

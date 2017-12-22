@@ -25,21 +25,23 @@ a.edit {
     background: url('edit.png');
 }
 
-a.add-button {
+a.add-button, form button {
     display: inline-block;
     min-width: 32px;
     height: 32px;
     line-height: 32px;
-    margin: 5px 5px 0 0;
-    padding: 2px 5px 2px 36px;
+}
+
+a.add-button {
     background: #0C4 url('add.png') 2px 2px no-repeat;
     color: #333;
     text-decoration: none;
+    margin: 5px 5px 0 0;
+    padding: 2px 5px 2px 36px;
 }
 
 form {
-    width: 300px;
-    background: yellow;
+    width: 450px;
     padding: 0 20px 20px 20px;
 }
 
@@ -47,8 +49,33 @@ form label, form input, form select {
     display: block;
     box-sizing: border-box;
     width: 100%;
+    height: 32px;
+    line-height: 32px;
 }
 
 form label {
-    margin-top: 20px;
+    margin-top: 32px;
+}
+
+form button {
+    height: 36px;
+    line-height: 36px;
+    margin: 32px 5px 0 0;
+    padding: 0 5px 0 32px;
+}
+
+form button.save {
+    background: #0C4 url('save.png') no-repeat;
+}
+
+form button.delete {
+    background: #C40 url('delete.png') no-repeat;
+}
+
+form button.reset {
+    background: #04C url('reset.png') no-repeat;
+}
+
+form button.back {
+    background: #04C url('back.png') no-repeat;
 }
