@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project name="servers paths" basedir=".">
+    <property name="mysql-host" value="localhost" />
+    <property name="mysql-port" value="3306" />
+    <property name="mysql-user" value="root" />
+    <property name="mysql-password" value="root" />
+
+    <property name="tomcat" value="D:/programs/tomcat"/>
+    <property name="tomcat-host" value="http://localhost" />
+    <property name="tomcat-port" value="80" />
+    <property name="tomcat-user" value="root" />
+    <property name="tomcat-password" value="root" />
+
+    <property name="deploy-path" value="/epam-proj" />
+</project>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Context>
+<Context path="/epam-proj" docBase="D:/workspaces/git/epam-example-of-project/web"/>
+<!-- copy this file into tomcat folder in "/conf/Catalina/localhost" -->

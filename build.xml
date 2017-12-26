@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project name="epam-example-of-project" basedir=".">
+    <!-- importing of properties file (rename "properties.default.xml" to ".properties.xml" and change settings) -->
+    <import file=".properties.xml" />
+
+    <!-- MySQL connection properties -->
+    <property name="mysql-jdbc" value="jdbc:mysql://${mysql-host}:${mysql-port}?useUnicode=true&amp;characterEncoding=UTF-8" />
+
+    <!-- Tomcat connection properties -->
+    <property name="tomcat-bin" value="${tomcat}/bin" />
+    <property name="tomcat-lib" value="${tomcat}/lib" />
+    <property name="tomcat-manager" value="${tomcat-host}:${tomcat-port}/manager/text" />
+
+    <!-- targets for database processing -->
+    <target name="init data base">
+        <sql driver="com.mysql.jdbc.Driver" url="${mysql-jdbc}" userid="${mysql-user}" password="${mysql-password}" encoding="utf8">
+            <classpath>
+                <pathelement location="web/WEB-INF/lib/mysql-connector-java-5.1.45-bin.jar" />
+            </classpath>
+            <sort>
+                <fileset dir="db" includes="*.sql" />
+            </sort>
+        </sql>
+    </target>
+
+    <!-- targets for web-application processing -->
+    <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask">
+        <classpath>
+            <fileset dir="${tomcat-lib}">
+                <include name="catalina-ant.jar" />
+                <include name="tomcat-coyote.jar" />
+                <include name="tomcat-util.jar" />
+            </fileset>
+            <fileset dir="${tomcat-bin}">
+                <include name="tomcat-juli.jar" />
+            </fileset>
+        </classpath>
+    </taskdef>
+    <target name="update">
+        <reload url="${tomcat-manager}" username="${tomcat-user}" password="${tomcat-password}" path="${deploy-path}" />
+    </target>
+</project>
