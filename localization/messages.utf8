@@ -1,0 +1,19 @@
+application.title=Bank “Horn & Hooves”
+
+role.cashier=Cashier
+role.manager=Manager
+role.admin=Administrator
+
+user.list.title=List of users
+user.list.table.login=User name
+user.list.table.role=User role
+user.list.button.add=Add
+
+user.edit.title.edit=Edit user information
+user.edit.title.add=Add new user
+user.edit.form.login=User name
+user.edit.form.role=User role
+user.edit.button.save=Save
+user.edit.button.delete=Delete
+user.edit.button.reset=Reset
+user.edit.button.cancel=Cancel

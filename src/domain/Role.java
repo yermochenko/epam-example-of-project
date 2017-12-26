@@ -1,9 +1,9 @@
 package domain;
 
 public enum Role {
-    CASHIER("Кассир"),
-    MANAGER("Менеджер"),
-    ADMINISTRATOR("Администратор");
+    CASHIER("role.cashier"),
+    MANAGER("role.manager"),
+    ADMINISTRATOR("role.admin");
 
     private String name;
 

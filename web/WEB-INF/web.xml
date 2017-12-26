@@ -7,6 +7,11 @@
 
     <display-name>Банк «Рога и копыта»</display-name>
 
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>messages</param-value>
+    </context-param>
+
     <servlet>
       <servlet-name>UserListController</servlet-name>
       <servlet-class>controller.UserListController</servlet-class>

@@ -1,0 +1,19 @@
+application.title=Банк «Рога и копыта»
+
+role.cashier=Кассир
+role.manager=Менеджер
+role.admin=Администратор
+
+user.list.title=Список пользователей
+user.list.table.login=Имя пользователя
+user.list.table.role=Роль
+user.list.button.add=Добавить
+
+user.edit.title.edit=Редактирование данных пользователя
+user.edit.title.add=Добавление нового пользователя
+user.edit.form.login=Имя пользователя
+user.edit.form.role=Роль
+user.edit.button.save=Сохранить
+user.edit.button.delete=Удалить
+user.edit.button.reset=Сброс
+user.edit.button.cancel=Отмена

@@ -25,6 +25,14 @@
     </target>
 
     <!-- targets for web-application processing -->
+
+    <target name="init">
+        <native2ascii encoding="UTF-8"
+            src="localization"
+            dest="web/WEB-INF/classes"
+            includes="**/*.utf8" ext=".properties"/>
+    </target>
+
     <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask">
         <classpath>
             <fileset dir="${tomcat-lib}">
@@ -37,7 +45,7 @@
             </fileset>
         </classpath>
     </taskdef>
-    <target name="update">
+    <target name="update" depends="init">
         <reload url="${tomcat-manager}" username="${tomcat-user}" password="${tomcat-password}" path="${deploy-path}" />
     </target>
 </project>
