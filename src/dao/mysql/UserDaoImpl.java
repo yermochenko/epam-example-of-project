@@ -92,6 +92,28 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
     }
 
     @Override
+    public boolean isUserInitiatesTransfers(Long id) throws DaoException {
+        String sql = "SELECT COUNT(*) AS `count` FROM (SELECT `id` FROM `transfer` WHERE `operator_id` = ? LIMIT 1) AS `t`";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            statement = getConnection().prepareStatement(sql);
+            statement.setLong(1, id);
+            resultSet = statement.executeQuery();
+            boolean result = true;
+            if(resultSet.next()) {
+                result = resultSet.getBoolean("count");
+            }
+            return result;
+        } catch(SQLException e) {
+            throw new DaoException(e);
+        } finally {
+            try{ statement.close(); } catch(Exception e) {}
+            try{ resultSet.close(); } catch(Exception e) {}
+        }
+    }
+
+    @Override
     public Long create(User user) throws DaoException {
         String sql = "INSERT INTO `user` (`login`, `password`, `role`) VALUES (?, ?, ?)";
         PreparedStatement statement = null;

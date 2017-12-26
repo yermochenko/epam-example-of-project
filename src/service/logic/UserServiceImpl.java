@@ -68,4 +68,22 @@ public class UserServiceImpl implements UserService {
             throw new ServiceException(e);
         }
     }
+
+    @Override
+    public boolean canDelete(Long id) throws ServiceException {
+        try {
+            return !userDao.isUserInitiatesTransfers(id);
+        } catch(DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public void delete(Long id) throws ServiceException {
+        try {
+            userDao.delete(id);
+        } catch(DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
 }

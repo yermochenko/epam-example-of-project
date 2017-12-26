@@ -37,6 +37,16 @@
         <url-pattern>/user/save.html</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+      <servlet-name>UserDeleteController</servlet-name>
+      <servlet-class>controller.UserDeleteController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserDeleteController</servlet-name>
+        <url-pattern>/user/delete.html</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>

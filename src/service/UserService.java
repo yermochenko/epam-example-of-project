@@ -10,4 +10,8 @@ public interface UserService {
     List<User> findAll() throws ServiceException;
 
     void save(User user) throws ServiceException;
+
+    boolean canDelete(Long id) throws ServiceException;
+
+    void delete(Long id) throws ServiceException;
 }
