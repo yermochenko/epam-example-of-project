@@ -13,43 +13,13 @@
     </context-param>
 
     <servlet>
-      <servlet-name>UserListController</servlet-name>
-      <servlet-class>controller.UserListController</servlet-class>
+      <servlet-name>DispatcherServlet</servlet-name>
+      <servlet-class>controller.DispatcherServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>UserListController</servlet-name>
-        <url-pattern>/user/list.html</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-      <servlet-name>UserEditController</servlet-name>
-      <servlet-class>controller.UserEditController</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>UserEditController</servlet-name>
-        <url-pattern>/user/edit.html</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-      <servlet-name>UserSaveController</servlet-name>
-      <servlet-class>controller.UserSaveController</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>UserSaveController</servlet-name>
-        <url-pattern>/user/save.html</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-      <servlet-name>UserDeleteController</servlet-name>
-      <servlet-class>controller.UserDeleteController</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>UserDeleteController</servlet-name>
-        <url-pattern>/user/delete.html</url-pattern>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <url-pattern>*.html</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
