@@ -13,6 +13,8 @@ import controller.user.UserSaveAction;
 public class ActionFactory {
     private static Map<String, Class<? extends Action>> actions = new HashMap<>();
     static {
+        actions.put("/", MainAction.class);
+        actions.put("/index", MainAction.class);
         actions.put("/user/list", UserListAction.class);
         actions.put("/user/edit", UserEditAction.class);
         actions.put("/user/save", UserSaveAction.class);

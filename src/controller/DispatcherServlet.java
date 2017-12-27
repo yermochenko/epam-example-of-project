@@ -38,7 +38,12 @@ public class DispatcherServlet extends HttpServlet {
     private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = req.getRequestURI();
         String context = req.getContextPath();
-        url = url.substring(context.length(), url.lastIndexOf(".html"));
+        int postfixIndex = url.lastIndexOf(".html");
+        if(postfixIndex != -1) {
+            url = url.substring(context.length(), postfixIndex);
+        } else {
+            url = url.substring(context.length());
+        }
         Action action = ActionFactory.getAction(url);
         try(ServiceFactory factory = getServiceFactory()) {
             action.setServiceFactory(factory);
