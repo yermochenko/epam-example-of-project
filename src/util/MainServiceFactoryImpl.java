@@ -3,9 +3,13 @@ package util;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import dao.AccountDao;
 import dao.UserDao;
+import dao.mysql.AccountDaoImpl;
 import dao.mysql.UserDaoImpl;
+import service.AccountService;
 import service.UserService;
+import service.logic.AccountServiceImpl;
 import service.logic.UserServiceImpl;
 
 public class MainServiceFactoryImpl implements ServiceFactory {
@@ -20,10 +24,24 @@ public class MainServiceFactoryImpl implements ServiceFactory {
     }
 
     @Override
+    public AccountService getAccountService() throws FactoryException {
+        AccountServiceImpl accountService = new AccountServiceImpl();
+        accountService.setAccountDao(getAccountDao());
+        return accountService;
+    }
+
+    @Override
     public UserDao getUserDao() throws FactoryException {
         UserDaoImpl userDao = new UserDaoImpl();
         userDao.setConnection(getConnection());
         return userDao;
+    }
+
+    @Override
+    public AccountDao getAccountDao() throws FactoryException {
+        AccountDaoImpl accountDao = new AccountDaoImpl();
+        accountDao.setConnection(getConnection());
+        return accountDao;
     }
 
     @Override

@@ -17,3 +17,8 @@ user.edit.button.save=Save
 user.edit.button.delete=Delete
 user.edit.button.reset=Reset
 user.edit.button.cancel=Cancel
+
+account.list.title=List of accounts
+account.list.table.client=Client
+account.list.table.balance=Balance
+account.list.button.add=Add
