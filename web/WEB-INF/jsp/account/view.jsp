@@ -10,6 +10,10 @@
     <h2>${title}</h2>
     <table>
         <tr>
+            <th><fmt:message key="account.view.table.id"/></th>
+            <td class="content">${account.id}</td>
+        </tr>
+        <tr>
             <th><fmt:message key="account.view.table.client"/></th>
             <td class="content">${account.client}</td>
         </tr>
