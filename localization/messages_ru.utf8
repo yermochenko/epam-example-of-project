@@ -22,3 +22,8 @@ account.list.title=Список клиентов
 account.list.table.client=Клиент
 account.list.table.balance=Баланс счёта
 account.list.button.add=Добавить
+
+account.view.title=Данные клиента
+account.view.table.client=Клиент
+account.view.table.balance=Баланс счёта
+account.view.button.edit=Редактировать

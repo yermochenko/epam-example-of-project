@@ -5,5 +5,7 @@ import java.util.List;
 import domain.Account;
 
 public interface AccountService {
+    Account findById(Long id) throws ServiceException;
+
     List<Account> findAll() throws ServiceException;
 }

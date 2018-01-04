@@ -32,19 +32,26 @@ a.view {
     background: url('view.png');
 }
 
-a.add-button, form button {
+a.add-button, form button, a.edit-button {
     display: inline-block;
     min-width: 32px;
     height: 32px;
     line-height: 32px;
 }
 
-a.add-button {
-    background: #0C4 url('add.png') 2px 2px no-repeat;
+a.add-button, a.edit-button {
     color: #333;
     text-decoration: none;
     margin: 5px 5px 0 0;
     padding: 2px 5px 2px 36px;
+}
+
+a.add-button {
+    background: #0C4 url('add.png') 2px 2px no-repeat;
+}
+
+a.edit-button {
+    background: #0C4 url('edit.png') 2px 2px no-repeat;
 }
 
 form {

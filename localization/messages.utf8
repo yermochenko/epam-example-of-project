@@ -22,3 +22,8 @@ account.list.title=List of accounts
 account.list.table.client=Client
 account.list.table.balance=Balance
 account.list.button.add=Add
+
+account.view.title=Account information
+account.view.table.client=Client
+account.view.table.balance=Balance
+account.view.button.edit=Edit

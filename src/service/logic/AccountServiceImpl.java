@@ -16,6 +16,15 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    public Account findById(Long id) throws ServiceException {
+        try {
+            return accountDao.read(id);
+        } catch(DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
     public List<Account> findAll() throws ServiceException {
         try {
             return accountDao.readAll();
