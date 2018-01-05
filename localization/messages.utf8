@@ -1,8 +1,16 @@
 application.title=Bank “Horn & Hooves”
+application.welcome=Current user is
+application.button.logout=Log out
 
 role.cashier=Cashier
 role.manager=Manager
 role.admin=Administrator
+
+login.title=Login page
+login.message=Username or password is incorrect
+login.form.login=Username
+login.form.password=Password
+login.button.login=Log in
 
 user.list.title=List of users
 user.list.table.login=User name

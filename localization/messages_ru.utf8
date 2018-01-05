@@ -1,8 +1,16 @@
 application.title=Банк «Рога и копыта»
+application.welcome=Текущий пользователь
+application.button.logout=Выход
 
 role.cashier=Кассир
 role.manager=Менеджер
 role.admin=Администратор
+
+login.title=Вход в систему
+login.message=Имя пользователя или пароль не опознанны
+login.form.login=Имя пользователя
+login.form.password=Пароль
+login.button.login=Войти
 
 user.list.title=Список пользователей
 user.list.table.login=Имя пользователя

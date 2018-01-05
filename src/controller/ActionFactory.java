@@ -20,6 +20,8 @@ public class ActionFactory {
     static {
         actions.put("/", MainAction.class);
         actions.put("/index", MainAction.class);
+        actions.put("/login", LoginAction.class);
+        actions.put("/logout", LogoutAction.class);
         actions.put("/user/list", UserListAction.class);
         actions.put("/user/edit", UserEditAction.class);
         actions.put("/user/save", UserSaveAction.class);

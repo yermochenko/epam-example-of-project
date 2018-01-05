@@ -14,8 +14,11 @@
         <link href="${urlCss}" rel="stylesheet">
     </head>
     <body>
-        <fmt:message key="application.title" var="appTitle"/>
-        <h1>${appTitle}</h1>
+        <h1><fmt:message key="application.title"/></h1>
+        <c:if test="${not empty currentUser}">
+            <c:url var="urlLogout" value="/logout.html"/>
+            <p><fmt:message key="application.welcome"/> ${currentUser.login} (<fmt:message key="${currentUser.role.name}"/>). <a href="${urlLogout}"><fmt:message key="application.button.logout"/></a></p>
+        </c:if>
         <jsp:doBody/>
     </body>
 </html>
