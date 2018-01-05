@@ -8,6 +8,7 @@ import dao.TransferDao;
 import dao.UserDao;
 import domain.Account;
 import domain.Transfer;
+import service.AccountNotExistsException;
 import service.AccountService;
 import service.ServiceException;
 
@@ -60,6 +61,27 @@ public class AccountServiceImpl implements AccountService {
     public List<Account> findAll() throws ServiceException {
         try {
             return accountDao.readAll();
+        } catch(DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public void save(Account account) throws ServiceException {
+        try {
+            if(account.getId() != null) {
+                Account storedAccount = accountDao.read(account.getId());
+                if(storedAccount != null) {
+                    account.setBalance(storedAccount.getBalance());
+                    accountDao.update(account);
+                } else {
+                    throw new AccountNotExistsException(account.getId());
+                }
+            } else {
+                account.setBalance(0L);
+                Long id = accountDao.create(account);
+                account.setId(id);
+            }
         } catch(DaoException e) {
             throw new ServiceException(e);
         }

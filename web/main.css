@@ -93,3 +93,7 @@ form button.reset {
 form button.back {
     background: #04C url('back.png') no-repeat;
 }
+
+form input[readonly] {
+    background: #CCC;
+}
