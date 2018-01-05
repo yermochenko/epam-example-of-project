@@ -38,6 +38,7 @@ account.view.history.table.amount=Сумма перевода
 account.view.history.table.date=Дата и время перевода
 account.view.history.table.operator=Работник, ответственный за операцию
 account.view.button.edit=Редактировать
+account.view.button.cancel=Отмена
 
 account.edit.title.edit=Редактирование данных клиента
 account.edit.title.add=Добавление нового клиента

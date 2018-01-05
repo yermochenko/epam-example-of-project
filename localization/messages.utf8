@@ -38,6 +38,7 @@ account.view.history.table.amount=Transfer amount
 account.view.history.table.date=Transfer date
 account.view.history.table.operator=Employee responsible for the operation
 account.view.button.edit=Edit
+account.view.button.cancel=Cancel
 
 account.edit.title.edit=Edit account information
 account.edit.title.add=Add new account
