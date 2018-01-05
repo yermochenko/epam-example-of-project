@@ -33,6 +33,10 @@
             <input id="balance" value="${account.balance}" readonly>
         </c:if>
         <button class="save"><fmt:message key="account.edit.button.save"/></button>
+        <c:if test="${not empty account.id}">
+            <c:if test="${not empty account.history}"><c:set var="disabled" value="disabled"/></c:if>
+            <button class="delete" formaction="${urlAccountDelete}" formmethod="post" ${disabled}><fmt:message key="account.edit.button.delete"/></button>
+        </c:if>
         <button class="reset" type="reset"><fmt:message key="account.edit.button.reset"/></button>
         <button class="back" formaction="${urlBack}" formmethod="get"><fmt:message key="account.edit.button.cancel"/></button>
     </form>

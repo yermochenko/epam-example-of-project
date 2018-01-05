@@ -46,6 +46,7 @@ account.edit.form.id=Номер счёта
 account.edit.form.client=Клиент
 account.edit.form.balance=Баланс счёта
 account.edit.button.save=Сохранить
+account.edit.button.delete=Удалить
 account.edit.button.reset=Сброс
 account.edit.button.cancel=Отмена
 account.edit.history.table.source=Счёт-источник

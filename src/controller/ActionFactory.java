@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.ServletException;
 
+import controller.account.AccountDeleteAction;
 import controller.account.AccountEditAction;
 import controller.account.AccountListAction;
 import controller.account.AccountSaveAction;
@@ -27,6 +28,7 @@ public class ActionFactory {
         actions.put("/account/view", AccountViewAction.class);
         actions.put("/account/edit", AccountEditAction.class);
         actions.put("/account/save", AccountSaveAction.class);
+        actions.put("/account/delete", AccountDeleteAction.class);
     }
 
     public static Action getAction(String url) throws ServletException {

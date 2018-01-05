@@ -10,4 +10,6 @@ public interface AccountService {
     List<Account> findAll() throws ServiceException;
 
     void save(Account account) throws ServiceException;
+
+    void delete(Long id) throws ServiceException;
 }

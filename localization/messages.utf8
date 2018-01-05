@@ -46,6 +46,7 @@ account.edit.form.id=Account number
 account.edit.form.client=Client
 account.edit.form.balance=Balance
 account.edit.button.save=Save
+account.edit.button.delete=Delete
 account.edit.button.reset=Reset
 account.edit.button.cancel=Cancel
 account.edit.history.table.source=Source account

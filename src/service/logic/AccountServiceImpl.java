@@ -86,4 +86,13 @@ public class AccountServiceImpl implements AccountService {
             throw new ServiceException(e);
         }
     }
+
+    @Override
+    public void delete(Long id) throws ServiceException {
+        try {
+            accountDao.delete(id);
+        } catch(DaoException e) {
+            throw new ServiceException(e);
+        }
+    }
 }
