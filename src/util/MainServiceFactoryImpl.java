@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 import dao.AccountDao;
+import dao.TransferDao;
 import dao.UserDao;
 import dao.mysql.AccountDaoImpl;
+import dao.mysql.TransferDaoImpl;
 import dao.mysql.UserDaoImpl;
 import service.AccountService;
 import service.UserService;
@@ -27,6 +29,8 @@ public class MainServiceFactoryImpl implements ServiceFactory {
     public AccountService getAccountService() throws FactoryException {
         AccountServiceImpl accountService = new AccountServiceImpl();
         accountService.setAccountDao(getAccountDao());
+        accountService.setTransferDao(getTransferDao());
+        accountService.setUserDao(getUserDao());
         return accountService;
     }
 
@@ -42,6 +46,12 @@ public class MainServiceFactoryImpl implements ServiceFactory {
         AccountDaoImpl accountDao = new AccountDaoImpl();
         accountDao.setConnection(getConnection());
         return accountDao;
+    }
+
+    public TransferDao getTransferDao() throws FactoryException {
+        TransferDaoImpl transferDao = new TransferDaoImpl();
+        transferDao.setConnection(getConnection());
+        return transferDao;
     }
 
     @Override

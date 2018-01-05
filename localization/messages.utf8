@@ -24,7 +24,17 @@ account.list.table.balance=Balance
 account.list.button.add=Add
 
 account.view.title=Account information
+account.view.subtitle=Account history
 account.view.table.id=Account number
 account.view.table.client=Client
 account.view.table.balance=Balance
+account.view.history.table.source=Source account
+account.view.history.table.source.empty=Accepted in cash
+account.view.history.table.destination=Destination account
+account.view.history.table.destination.empty=Given in cash
+account.view.history.table.account.id=Number
+account.view.history.table.account.client=Owner
+account.view.history.table.amount=Transfer amount
+account.view.history.table.date=Transfer date
+account.view.history.table.operator=Employee responsible for the operation
 account.view.button.edit=Edit

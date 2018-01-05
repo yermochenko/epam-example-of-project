@@ -24,7 +24,17 @@ account.list.table.balance=Баланс счёта
 account.list.button.add=Добавить
 
 account.view.title=Данные клиента
+account.view.subtitle=История счёта
 account.view.table.id=Номер счёта
 account.view.table.client=Клиент
 account.view.table.balance=Баланс счёта
+account.view.history.table.source=Счёт-источник
+account.view.history.table.source.empty=Принято наличными
+account.view.history.table.destination=Счёта-получатель
+account.view.history.table.destination.empty=Выдано наличными
+account.view.history.table.account.id=Номер
+account.view.history.table.account.client=Владелец
+account.view.history.table.amount=Сумма перевода
+account.view.history.table.date=Дата и время перевода
+account.view.history.table.operator=Работник, ответственный за операцию
 account.view.button.edit=Редактировать
