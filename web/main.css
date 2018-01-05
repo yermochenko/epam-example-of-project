@@ -18,42 +18,6 @@ td.content {
     padding: 5px 30px 5px 10px;
 }
 
-a.edit {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    background: url('edit.png');
-}
-
-a.view {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    background: url('view.png');
-}
-
-a.add-button, form button, a.edit-button {
-    display: inline-block;
-    min-width: 32px;
-    height: 32px;
-    line-height: 32px;
-}
-
-a.add-button, a.edit-button {
-    color: #333;
-    text-decoration: none;
-    margin: 5px 5px 0 0;
-    padding: 2px 5px 2px 36px;
-}
-
-a.add-button {
-    background: #0C4 url('add.png') 2px 2px no-repeat;
-}
-
-a.edit-button {
-    background: #0C4 url('edit.png') 2px 2px no-repeat;
-}
-
 form {
     width: 450px;
     padding: 0 20px 20px 20px;
@@ -71,11 +35,51 @@ form label {
     margin-top: 32px;
 }
 
-form button {
-    height: 36px;
-    line-height: 36px;
+form input[readonly] {
+    background: #CCC;
+}
+
+a.edit, a.view, a.add-button, a.edit-button, a.back, form button {
+    display: inline-block;
+    border: 0;
+    min-width: 32px;
+    height: 32px;
+    line-height: 32px;
+    color: #333;
+    outline: 0;
+}
+
+a.add-button, a.edit-button, a.back, form button {
     margin: 32px 5px 0 0;
     padding: 0 5px 0 32px;
+}
+
+form button {
+    cursor: pointer;
+}
+
+a.edit, a.view, a.add-button, a.edit-button, a.back {
+    text-decoration: none;
+}
+
+a.edit {
+    background: url('edit.png');
+}
+
+a.view {
+    background: url('view.png');
+}
+
+a.add-button {
+    background: #0C4 url('add.png') no-repeat;
+}
+
+a.edit-button {
+    background: #0C4 url('edit.png') no-repeat;
+}
+
+a.back {
+    background: #04C url('back.png') no-repeat;
 }
 
 form button.save {
@@ -88,12 +92,4 @@ form button.delete {
 
 form button.reset {
     background: #04C url('reset.png') no-repeat;
-}
-
-form button.back {
-    background: #04C url('back.png') no-repeat;
-}
-
-form input[readonly] {
-    background: #CCC;
 }

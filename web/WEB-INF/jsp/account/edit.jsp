@@ -9,7 +9,9 @@
 <c:choose>
     <c:when test="${not empty account.id}">
         <fmt:message var="title" key="account.edit.title.edit"/>
-        <c:url var="urlBack" value="/account/view.html"/>
+        <c:url var="urlBack" value="/account/view.html">
+            <c:param name="id" value="${account.id}"/>
+        </c:url>
     </c:when>
     <c:otherwise>
         <fmt:message var="title" key="account.edit.title.add"/>
@@ -38,7 +40,7 @@
             <button class="delete" formaction="${urlAccountDelete}" formmethod="post" ${disabled}><fmt:message key="account.edit.button.delete"/></button>
         </c:if>
         <button class="reset" type="reset"><fmt:message key="account.edit.button.reset"/></button>
-        <button class="back" formaction="${urlBack}" formmethod="get"><fmt:message key="account.edit.button.cancel"/></button>
+        <a class="back" href="${urlBack}"><fmt:message key="account.edit.button.cancel"/></a>
     </form>
     <c:if test="${not empty account.id}">
         <h3><fmt:message key="account.edit.subtitle"/></h3>
