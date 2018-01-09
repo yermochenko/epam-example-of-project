@@ -38,6 +38,9 @@ account.list.button.add=Add
 
 account.view.title=Account information
 account.view.subtitle=Account history
+account.cash.form.amount=Amount
+account.cash.button.give=Give in cash
+account.cash.button.accept=Accept in cash
 account.view.table.id=Account number
 account.view.table.client=Client
 account.view.table.balance=Balance

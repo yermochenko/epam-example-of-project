@@ -8,6 +8,14 @@
 <fmt:message var="title" key="account.view.title"/>
 <u:html title="${title}">
     <h2>${title}</h2>
+    <c:url var="urlCash" value="/cash.html"/>
+    <form class="important" action="${urlCash}" method="post">
+        <input name="id" value="${account.id}" type="hidden"/>
+        <label for="amount"><fmt:message key="account.cash.form.amount"/>:</label>
+        <input id="amount" name="amount">
+        <button class="transfer" name="operation" value="give"><fmt:message key="account.cash.button.give"/></button>
+        <button class="transfer" name="operation" value="accept"><fmt:message key="account.cash.button.accept"/></button>
+    </form>
     <table>
         <tr>
             <th><fmt:message key="account.view.table.id"/></th>

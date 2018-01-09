@@ -52,6 +52,7 @@ public class SecurityFilter implements Filter {
         permissions.put("/account/delete", manager);
 
         permissions.put("/transfer", employees);
+        permissions.put("/cash", employees);
     }
 
     @Override

@@ -38,6 +38,9 @@ account.list.button.add=Добавить
 
 account.view.title=Данные клиента
 account.view.subtitle=История счёта
+account.cash.form.amount=Сумма
+account.cash.button.give=Выдать наличными
+account.cash.button.accept=Принять наличными
 account.view.table.id=Номер счёта
 account.view.table.client=Клиент
 account.view.table.balance=Баланс счёта
