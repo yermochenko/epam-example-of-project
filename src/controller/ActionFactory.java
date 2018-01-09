@@ -10,6 +10,7 @@ import controller.account.AccountEditAction;
 import controller.account.AccountListAction;
 import controller.account.AccountSaveAction;
 import controller.account.AccountViewAction;
+import controller.password.PasswordResetAction;
 import controller.password.PasswordSaveAction;
 import controller.transfer.CashAction;
 import controller.transfer.TransferAction;
@@ -26,6 +27,7 @@ public class ActionFactory {
         actions.put("/login", LoginAction.class);
         actions.put("/logout", LogoutAction.class);
         actions.put("/password/save", PasswordSaveAction.class);
+        actions.put("/password/reset", PasswordResetAction.class);
         actions.put("/user/list", UserListAction.class);
         actions.put("/user/edit", UserEditAction.class);
         actions.put("/user/save", UserSaveAction.class);

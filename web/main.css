@@ -19,7 +19,7 @@ td.content {
 }
 
 form {
-    width: 450px;
+    width: 600px;
     padding: 0 20px 20px 20px;
 }
 
@@ -110,6 +110,10 @@ form button.reset {
     background: #04C url('reset.png') no-repeat;
 }
 
+form button.password-reset {
+    background: #FC4 url('reset.png') no-repeat;
+}
+
 form button.login, form button.transfer {
     background: #0C4;
     padding: 0 32px 0 32px;
@@ -124,7 +128,7 @@ form button.transfer {
 }
 
 p.error {
-    width: 410px;
+    width: 560px;
     background: #C44;
     border: 1px solid #400;
     padding: 5px 20px;

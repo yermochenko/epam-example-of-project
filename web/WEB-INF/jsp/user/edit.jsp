@@ -16,6 +16,7 @@
     <c:url var="urlUserList" value="/user/list.html"/>
     <c:url var="urlUserSave" value="/user/save.html"/>
     <c:url var="urlUserDelete" value="/user/delete.html"/>
+    <c:url var="urlPasswordReset" value="/password/reset.html"/>
     <form action="${urlUserSave}" method="post">
         <c:if test="${not empty user.id}"><input name="id" value="${user.id}" type="hidden"></c:if>
         <label for="login"><fmt:message key="user.edit.form.login"/>:</label>
@@ -34,6 +35,9 @@
         <c:if test="${not empty user.id}">
             <c:if test="${not userCanBeDeleted}"><c:set var="disabled" value="disabled"/></c:if>
             <button class="delete" formaction="${urlUserDelete}" formmethod="post" ${disabled}><fmt:message key="user.edit.button.delete"/></button>
+        </c:if>
+        <c:if test="${not empty user.id}">
+            <button class="password-reset" formaction="${urlPasswordReset}" formmethod="post"><fmt:message key="user.edit.button.password.reset"/></button>
         </c:if>
         <button class="reset" type="reset"><fmt:message key="user.edit.button.reset"/></button>
         <a class="back" href="${urlUserList}"><fmt:message key="user.edit.button.cancel"/></a>

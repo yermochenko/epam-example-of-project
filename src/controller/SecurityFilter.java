@@ -37,6 +37,7 @@ public class SecurityFilter implements Filter {
         permissions.put("/logout", all);
         permissions.put("/password/edit", all);
         permissions.put("/password/save", all);
+        permissions.put("/password/reset", admin);
 
         permissions.put("/user/list", admin);
         permissions.put("/user/edit", admin);

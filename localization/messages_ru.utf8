@@ -32,7 +32,8 @@ user.edit.form.login=Имя пользователя
 user.edit.form.role=Роль
 user.edit.button.save=Сохранить
 user.edit.button.delete=Удалить
-user.edit.button.reset=Сброс
+user.edit.button.password.reset=Сброс пароля
+user.edit.button.reset=Сброс формы
 user.edit.button.cancel=Отмена
 
 account.list.title=Список клиентов
