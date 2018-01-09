@@ -28,6 +28,10 @@ user.edit.button.reset=Reset
 user.edit.button.cancel=Cancel
 
 account.list.title=List of accounts
+account.transfer.form.source=Source account
+account.transfer.form.destination=Destination account
+account.transfer.form.amount=Transfer amount
+account.transfer.button.transfer=Transfer
 account.list.table.client=Client
 account.list.table.balance=Balance
 account.list.button.add=Add

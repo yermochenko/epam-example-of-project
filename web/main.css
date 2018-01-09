@@ -23,6 +23,11 @@ form {
     padding: 0 20px 20px 20px;
 }
 
+form.important {
+    background: orange;
+    margin-bottom: 20px;
+}
+
 form label, form input, form select {
     display: block;
     box-sizing: border-box;
@@ -33,6 +38,10 @@ form label, form input, form select {
 
 form label {
     margin-top: 32px;
+}
+
+form.important label {
+    margin-top: 10px;
 }
 
 form input[readonly] {
@@ -94,9 +103,17 @@ form button.reset {
     background: #04C url('reset.png') no-repeat;
 }
 
-form button.login {
+form button.login, form button.transfer {
     background: #0C4;
     padding: 0 32px 0 32px;
+}
+
+form button.login {
+    margin: 52px 5px 0 0;
+}
+
+form button.transfer {
+    margin: 20px 5px 0 0;
 }
 
 p.error {

@@ -7,6 +7,16 @@
 <fmt:message key="account.list.title" var="title"/>
 <u:html title="${title}">
     <h2>${title}</h2>
+    <c:url var="urlTransfer" value="/transfer.html"/>
+    <form class="important" action="${urlTransfer}" method="post">
+        <label for="source"><fmt:message key="account.transfer.form.source"/>:</label>
+        <input id="source" name="source">
+        <label for="destination"><fmt:message key="account.transfer.form.destination"/>:</label>
+        <input id="destination" name="destination">
+        <label for="amount"><fmt:message key="account.transfer.form.amount"/>:</label>
+        <input id="amount" name="amount">
+        <button class="transfer"><fmt:message key="account.transfer.button.transfer"/></button>
+    </form>
     <table>
         <tr>
             <th><fmt:message key="account.list.table.client"/></th>

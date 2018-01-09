@@ -10,6 +10,7 @@ import controller.account.AccountEditAction;
 import controller.account.AccountListAction;
 import controller.account.AccountSaveAction;
 import controller.account.AccountViewAction;
+import controller.transfer.TransferAction;
 import controller.user.UserDeleteAction;
 import controller.user.UserEditAction;
 import controller.user.UserListAction;
@@ -31,6 +32,7 @@ public class ActionFactory {
         actions.put("/account/edit", AccountEditAction.class);
         actions.put("/account/save", AccountSaveAction.class);
         actions.put("/account/delete", AccountDeleteAction.class);
+        actions.put("/transfer", TransferAction.class);
     }
 
     public static Action getAction(String url) throws ServletException {

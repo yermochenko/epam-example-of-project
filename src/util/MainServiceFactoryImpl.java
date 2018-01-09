@@ -11,9 +11,11 @@ import dao.mysql.TransferDaoImpl;
 import dao.mysql.UserDaoImpl;
 import service.AccountService;
 import service.Transaction;
+import service.TransferService;
 import service.UserService;
 import service.logic.AccountServiceImpl;
 import service.logic.TransactionImpl;
+import service.logic.TransferServiceImpl;
 import service.logic.UserServiceImpl;
 
 public class MainServiceFactoryImpl implements ServiceFactory {
@@ -36,6 +38,15 @@ public class MainServiceFactoryImpl implements ServiceFactory {
         accountService.setTransferDao(getTransferDao());
         accountService.setUserDao(getUserDao());
         return accountService;
+    }
+
+    @Override
+    public TransferService getTransferService() throws FactoryException {
+        TransferServiceImpl transferService = new TransferServiceImpl();
+        transferService.setTransaction(getTransaction());
+        transferService.setAccountDao(getAccountDao());
+        transferService.setTransferDao(getTransferDao());
+        return transferService;
     }
 
     @Override

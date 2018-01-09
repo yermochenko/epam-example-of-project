@@ -7,11 +7,13 @@ import dao.TransferDao;
 import dao.UserDao;
 import service.AccountService;
 import service.Transaction;
+import service.TransferService;
 import service.UserService;
 
 public interface ServiceFactory extends AutoCloseable {
     UserService getUserService() throws FactoryException;
     AccountService getAccountService() throws FactoryException;
+    TransferService getTransferService() throws FactoryException;
 
     Transaction getTransaction() throws FactoryException;
 

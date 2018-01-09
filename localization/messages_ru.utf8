@@ -28,6 +28,10 @@ user.edit.button.reset=Сброс
 user.edit.button.cancel=Отмена
 
 account.list.title=Список клиентов
+account.transfer.form.source=Счёт-источник
+account.transfer.form.destination=Счёт-получатель
+account.transfer.form.amount=Сумма перевода
+account.transfer.button.transfer=Перевести
 account.list.table.client=Клиент
 account.list.table.balance=Баланс счёта
 account.list.button.add=Добавить
