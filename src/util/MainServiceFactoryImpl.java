@@ -10,8 +10,10 @@ import dao.mysql.AccountDaoImpl;
 import dao.mysql.TransferDaoImpl;
 import dao.mysql.UserDaoImpl;
 import service.AccountService;
+import service.Transaction;
 import service.UserService;
 import service.logic.AccountServiceImpl;
+import service.logic.TransactionImpl;
 import service.logic.UserServiceImpl;
 
 public class MainServiceFactoryImpl implements ServiceFactory {
@@ -21,6 +23,7 @@ public class MainServiceFactoryImpl implements ServiceFactory {
     public UserService getUserService() throws FactoryException {
         UserServiceImpl userService = new UserServiceImpl();
         userService.setDefaultPassword("12345");
+        userService.setTransaction(getTransaction());
         userService.setUserDao(getUserDao());
         return userService;
     }
@@ -28,10 +31,18 @@ public class MainServiceFactoryImpl implements ServiceFactory {
     @Override
     public AccountService getAccountService() throws FactoryException {
         AccountServiceImpl accountService = new AccountServiceImpl();
+        accountService.setTransaction(getTransaction());
         accountService.setAccountDao(getAccountDao());
         accountService.setTransferDao(getTransferDao());
         accountService.setUserDao(getUserDao());
         return accountService;
+    }
+
+    @Override
+    public Transaction getTransaction() throws FactoryException {
+        TransactionImpl transaction = new TransactionImpl();
+        transaction.setConnection(getConnection());
+        return transaction;
     }
 
     @Override

@@ -10,7 +10,7 @@ import service.UserLoginNotUniqueException;
 import service.UserNotExistsException;
 import service.UserService;
 
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends BaseService implements UserService {
     private UserDao userDao;
     private String defaultPassword;
 
@@ -52,6 +52,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user) throws ServiceException {
         try {
+            getTransaction().start();
             if(user.getId() != null) {
                 User storedUser = userDao.read(user.getId());
                 if(storedUser != null) {
@@ -73,8 +74,13 @@ public class UserServiceImpl implements UserService {
                     throw new UserLoginNotUniqueException(user.getLogin());
                 }
             }
+            getTransaction().commit();
         } catch(DaoException e) {
+            try { getTransaction().rollback(); } catch(ServiceException e1) {}
             throw new ServiceException(e);
+        } catch(ServiceException e) {
+            try { getTransaction().rollback(); } catch(ServiceException e1) {}
+            throw e;
         }
     }
 

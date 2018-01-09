@@ -12,7 +12,7 @@ import service.AccountNotExistsException;
 import service.AccountService;
 import service.ServiceException;
 
-public class AccountServiceImpl implements AccountService {
+public class AccountServiceImpl extends BaseService implements AccountService {
     private AccountDao accountDao;
     private TransferDao transferDao;
     private UserDao userDao;
@@ -32,6 +32,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account findById(Long id) throws ServiceException {
         try {
+            getTransaction().start();
             Account account = accountDao.read(id);
             if(account != null) {
                 List<Transfer> history = transferDao.readHistoryOfAccount(id);
@@ -51,9 +52,14 @@ public class AccountServiceImpl implements AccountService {
                 }
                 account.setHistory(history);
             }
+            getTransaction().commit();
             return account;
         } catch(DaoException e) {
+            try { getTransaction().rollback(); } catch(ServiceException e1) {}
             throw new ServiceException(e);
+        } catch(ServiceException e) {
+            try { getTransaction().rollback(); } catch(ServiceException e1) {}
+            throw e;
         }
     }
 
@@ -69,6 +75,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void save(Account account) throws ServiceException {
         try {
+            getTransaction().start();
             if(account.getId() != null) {
                 Account storedAccount = accountDao.read(account.getId());
                 if(storedAccount != null) {
@@ -82,8 +89,13 @@ public class AccountServiceImpl implements AccountService {
                 Long id = accountDao.create(account);
                 account.setId(id);
             }
+            getTransaction().commit();
         } catch(DaoException e) {
+            try { getTransaction().rollback(); } catch(ServiceException e1) {}
             throw new ServiceException(e);
+        } catch(ServiceException e) {
+            try { getTransaction().rollback(); } catch(ServiceException e1) {}
+            throw e;
         }
     }
 
