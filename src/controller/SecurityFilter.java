@@ -34,10 +34,6 @@ public class SecurityFilter implements Filter {
         Set<Role> manager = new HashSet<>();
         manager.add(Role.MANAGER);
 
-        permissions.put("/", null);
-        permissions.put("/index", null);
-        permissions.put("/login", null);
-
         permissions.put("/logout", all);
 
         permissions.put("/user/list", admin);
