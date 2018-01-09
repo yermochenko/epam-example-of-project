@@ -22,13 +22,13 @@
             <td class="content">${account.balance}</td>
         </tr>
     </table>
-    <c:url var="urlAccountEdit" value="/account/edit.html">
-        <c:param name="id" value="${account.id}"/>
-    </c:url>
     <c:if test="${currentUser.role == 'MANAGER'}">
+        <c:url var="urlAccountEdit" value="/account/edit.html">
+            <c:param name="id" value="${account.id}"/>
+        </c:url>
         <a href="${urlAccountEdit}" class="edit-button"><fmt:message key="account.view.button.edit"/></a>
-        <c:url var="urlAccountList" value="/account/list.html"/>
     </c:if>
+    <c:url var="urlAccountList" value="/account/list.html"/>
     <a href="${urlAccountList}" class="back"><fmt:message key="account.view.button.cancel"/></a>
     <h3><fmt:message key="account.view.subtitle"/></h3>
     <table>
