@@ -26,6 +26,8 @@
             </tr>
         </c:forEach>
     </table>
-    <c:url var="urlAccountEdit" value="/account/edit.html"/>
-    <a href="${urlAccountEdit}" class="add-button"><fmt:message key="account.list.button.add"/></a>
+    <c:if test="${currentUser.role == 'MANAGER'}">
+        <c:url var="urlAccountEdit" value="/account/edit.html"/>
+        <a href="${urlAccountEdit}" class="add-button"><fmt:message key="account.list.button.add"/></a>
+    </c:if>
 </u:html>

@@ -7,7 +7,8 @@ role.manager=Менеджер
 role.admin=Администратор
 
 login.title=Вход в систему
-login.message=Имя пользователя или пароль не опознанны
+login.message.incorrect.password=Имя пользователя или пароль не опознанны
+login.message.access.denied=Доступ запрещён
 login.form.login=Имя пользователя
 login.form.password=Пароль
 login.button.login=Войти

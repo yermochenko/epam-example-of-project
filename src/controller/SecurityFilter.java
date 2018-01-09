@@ -31,6 +31,8 @@ public class SecurityFilter implements Filter {
         Set<Role> employees = new HashSet<>();
         employees.add(Role.MANAGER);
         employees.add(Role.CASHIER);
+        Set<Role> manager = new HashSet<>();
+        manager.add(Role.MANAGER);
 
         permissions.put("/", null);
         permissions.put("/index", null);
@@ -45,6 +47,9 @@ public class SecurityFilter implements Filter {
 
         permissions.put("/account/list", employees);
         permissions.put("/account/view", employees);
+        permissions.put("/account/edit", manager);
+        permissions.put("/account/save", manager);
+        permissions.put("/account/delete", manager);
     }
 
     @Override
@@ -76,7 +81,7 @@ public class SecurityFilter implements Filter {
             chain.doFilter(req, resp);
             return;
         }
-        httpResp.sendRedirect(context + "/login.html");
+        httpResp.sendRedirect(context + "/login.html?message=login.message.access.denied");
     }
 
     @Override

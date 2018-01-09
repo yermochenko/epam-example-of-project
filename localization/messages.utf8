@@ -7,7 +7,8 @@ role.manager=Manager
 role.admin=Administrator
 
 login.title=Login page
-login.message=Username or password is incorrect
+login.message.incorrect.password=Username or password is incorrect
+login.message.access.denied=Access is denied
 login.form.login=Username
 login.form.password=Password
 login.button.login=Log in
