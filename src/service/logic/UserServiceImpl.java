@@ -8,6 +8,7 @@ import domain.User;
 import service.ServiceException;
 import service.UserLoginNotUniqueException;
 import service.UserNotExistsException;
+import service.UserPasswordIncorrectException;
 import service.UserService;
 
 public class UserServiceImpl extends BaseService implements UserService {
@@ -73,6 +74,34 @@ public class UserServiceImpl extends BaseService implements UserService {
                 } else {
                     throw new UserLoginNotUniqueException(user.getLogin());
                 }
+            }
+            getTransaction().commit();
+        } catch(DaoException e) {
+            try { getTransaction().rollback(); } catch(ServiceException e1) {}
+            throw new ServiceException(e);
+        } catch(ServiceException e) {
+            try { getTransaction().rollback(); } catch(ServiceException e1) {}
+            throw e;
+        }
+    }
+
+    @Override
+    public void changePassword(Long userId, String oldPassword, String newPassword) throws ServiceException {
+        try {
+            getTransaction().start();
+            User user = userDao.read(userId);
+            if(user != null) {
+                if(user.getPassword().equals(oldPassword)) {
+                    if(newPassword == null) {
+                        newPassword = defaultPassword;
+                    }
+                    user.setPassword(newPassword);
+                    userDao.update(user);
+                } else {
+                    throw new UserPasswordIncorrectException(user.getId());
+                }
+            } else {
+                throw new UserNotExistsException(userId);
             }
             getTransaction().commit();
         } catch(DaoException e) {

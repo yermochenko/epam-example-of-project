@@ -10,6 +10,7 @@ import controller.account.AccountEditAction;
 import controller.account.AccountListAction;
 import controller.account.AccountSaveAction;
 import controller.account.AccountViewAction;
+import controller.password.PasswordSaveAction;
 import controller.transfer.CashAction;
 import controller.transfer.TransferAction;
 import controller.user.UserDeleteAction;
@@ -24,6 +25,7 @@ public class ActionFactory {
         actions.put("/index", MainAction.class);
         actions.put("/login", LoginAction.class);
         actions.put("/logout", LogoutAction.class);
+        actions.put("/password/save", PasswordSaveAction.class);
         actions.put("/user/list", UserListAction.class);
         actions.put("/user/edit", UserEditAction.class);
         actions.put("/user/save", UserSaveAction.class);
@@ -39,10 +41,14 @@ public class ActionFactory {
 
     public static Action getAction(String url) throws ServletException {
         Class<?> action = actions.get(url);
-        try {
-            return (Action)action.newInstance();
-        } catch(InstantiationException | IllegalAccessException | NullPointerException e) {
-            throw new ServletException(e);
+        if(action != null) {
+            try {
+                return (Action)action.newInstance();
+            } catch(InstantiationException | IllegalAccessException | NullPointerException e) {
+                throw new ServletException(e);
+            }
+        } else {
+            return null;
         }
     }
 }

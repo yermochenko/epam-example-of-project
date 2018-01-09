@@ -1,6 +1,7 @@
 application.title=Bank “Horn & Hooves”
 application.welcome=Current user is
 application.button.logout=Log out
+application.button.password.change=Change password
 
 role.cashier=Cashier
 role.manager=Manager
@@ -12,6 +13,13 @@ login.message.access.denied=Access is denied
 login.form.login=Username
 login.form.password=Password
 login.button.login=Log in
+
+password.change.title=Changing password
+password.change.form.old.password=Old password
+password.change.form.new.password=New password
+password.change.form.new.password.repeat=Repeat new password
+password.change.button.save=Save
+password.change.button.cancel=Cancel
 
 user.list.title=List of users
 user.list.table.login=User name

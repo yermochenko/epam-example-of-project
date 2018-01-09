@@ -17,7 +17,13 @@
         <h1><fmt:message key="application.title"/></h1>
         <c:if test="${not empty currentUser}">
             <c:url var="urlLogout" value="/logout.html"/>
-            <p><fmt:message key="application.welcome"/> ${currentUser.login} (<fmt:message key="${currentUser.role.name}"/>). <a href="${urlLogout}"><fmt:message key="application.button.logout"/></a></p>
+            <c:url var="urlPasswordEdit" value="/password/edit.html"/>
+            <p>
+                <fmt:message key="application.welcome"/> ${currentUser.login}
+                (<fmt:message key="${currentUser.role.name}"/>).
+                <a href="${urlLogout}"><fmt:message key="application.button.logout"/></a>.
+                <a href="${urlPasswordEdit}"><fmt:message key="application.button.password.change"/></a>.
+            </p>
         </c:if>
         <jsp:doBody/>
     </body>
