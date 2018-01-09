@@ -61,10 +61,17 @@ a.edit, a.view, a.add-button, a.edit-button, a.back, form button {
 a.add-button, a.edit-button, a.back, form button {
     margin: 32px 5px 0 0;
     padding: 0 5px 0 32px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
 form button {
     cursor: pointer;
+}
+
+form button[disabled] {
+    color: #888;
+    cursor: default;
+    box-shadow: none;
 }
 
 a.edit, a.view, a.add-button, a.edit-button, a.back {
