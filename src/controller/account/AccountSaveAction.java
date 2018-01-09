@@ -19,9 +19,7 @@ public class AccountSaveAction extends Action {
         Account account = new Account();
         try {
             account.setId(Long.parseLong(req.getParameter("id")));
-        } catch(NumberFormatException e) {
-            System.out.println("\n\nERROR\n\n");
-        }
+        } catch(NumberFormatException e) {}
         account.setClient(req.getParameter("client"));
         if(account.getClient() != null) {
             try {
