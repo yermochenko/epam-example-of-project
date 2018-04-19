@@ -2,7 +2,7 @@ package dao.mysql;
 
 import java.sql.Connection;
 
-public class BaseDaoImpl {
+abstract public class BaseDaoImpl {
     private Connection connection;
 
     public Connection getConnection() {
